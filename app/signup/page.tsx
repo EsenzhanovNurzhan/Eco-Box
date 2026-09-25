@@ -25,6 +25,8 @@ const faculties = [
   "Институт нефтехимической инженерии и экологии",
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 type SignupStage = "details" | "verify" | "complete";
 
 export default function SignupPage() {
@@ -85,7 +87,7 @@ export default function SignupPage() {
     <main className="signup-shell">
       <header className="signup-header">
         <Link className="signup-brand" href="/" aria-label="Вернуться в EcoBox">
-          <Image src="/ecobox-logo.jpg" alt="" width={768} height={768} className="ecobox-logo" />
+          <Image src={`${basePath}/ecobox-logo.jpg`} alt="" width={768} height={768} className="ecobox-logo" />
         </Link>
         <div className="signup-header-actions"><LanguageSwitcher /><Link className="signup-back" href="/"><ArrowLeft size={15} />{t("backToShowcase")}</Link></div>
       </header>

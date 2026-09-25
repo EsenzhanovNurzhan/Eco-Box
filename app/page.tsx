@@ -54,6 +54,8 @@ type Reservation = {
   expiresAt: number;
 };
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const university = {
   name: "Атырауский университет нефти и газа имени Сафи Утебаева",
   color: "blue",
@@ -438,11 +440,11 @@ export default function Home() {
       <header className="topbar">
         <div className="brand-cluster">
           <Link className="brand" href="/" aria-label="EcoBox, на главную">
-            <Image src="/ecobox-logo.jpg" alt="" width={768} height={768} className="ecobox-logo" />
+            <Image src={`${basePath}/ecobox-logo.jpg`} alt="" width={768} height={768} className="ecobox-logo" />
           </Link>
           <span className="brand-divider" aria-hidden="true" />
           <div className="university-mark" title={t("universityName")}>
-            <Image src="/aogu-logo.png" alt={t("universityLogoAlt")} width={72} height={72} loading="eager" unoptimized />
+            <Image src={`${basePath}/aogu-logo.png`} alt={t("universityLogoAlt")} width={72} height={72} loading="eager" unoptimized />
           </div>
         </div>
         <nav className="desktop-nav" aria-label={t("sectionsLabel")}>
@@ -589,7 +591,7 @@ export default function Home() {
           </section>
         )}
 
-        <footer className="site-footer"><Link className="footer-brand" href="/" aria-label="EcoBox, на главную"><Image src="/ecobox-logo.jpg" alt="" width={768} height={768} className="ecobox-logo" /></Link><span>{t("siteFooter")}</span><a href="#faq">{t("faqLink")} <ArrowUpRight size={13} /></a></footer>
+        <footer className="site-footer"><Link className="footer-brand" href="/" aria-label="EcoBox, на главную"><Image src={`${basePath}/ecobox-logo.jpg`} alt="" width={768} height={768} className="ecobox-logo" /></Link><span>{t("siteFooter")}</span><a href="#faq">{t("faqLink")} <ArrowUpRight size={13} /></a></footer>
       </div>
 
       <nav className="mobile-nav" aria-label={t("bottomNavLabel")}>
