@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_BASE_PATH: /Eco-Box
+      NEXT_PUBLIC_BASE_PATH: /Box-Box
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
