@@ -3,7 +3,7 @@
 import { createContext, type ReactNode, useContext, useEffect, useState } from "react";
 
 const ruMessages = {
-  pageTitle: "EcoBox — вещи рядом в AOGU",
+  pageTitle: "Eco-Box — вещи рядом в AOGU",
   pageDescription: "Найди полезные вещи, забери их в AOGU и дай им вторую жизнь.",
   language: "Язык",
   showPassword: "Показать пароль",
@@ -233,7 +233,7 @@ type TranslationKey = keyof typeof ruMessages;
 export type Locale = "ru" | "kk" | "en";
 
 const kkMessages: Partial<Record<TranslationKey, string>> = {
-  pageTitle: "EcoBox — AOGU жанындағы пайдалы заттар",
+  pageTitle: "Eco-Box — AOGU жанындағы пайдалы заттар",
   pageDescription: "Пайдалы заттарды тауып, AOGU аумағынан алып, оларға екінші өмір сыйла.",
   language: "Тіл",
   showPassword: "Құпиясөзді көрсету",
@@ -459,7 +459,7 @@ const kkMessages: Partial<Record<TranslationKey, string>> = {
 };
 
 const enMessages: Partial<Record<TranslationKey, string>> = {
-  pageTitle: "EcoBox — useful finds near AOGU",
+  pageTitle: "Eco-Box — useful finds near AOGU",
   pageDescription: "Find useful items, pick them up at AOGU, and give them a second life.",
   language: "Language",
   showPassword: "Show password",
