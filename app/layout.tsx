@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EcoBox — вещи рядом в AOGU",
+  title: "Eco-Box — вещи рядом в AOGU",
   description: "Найди полезные вещи, забери их в AOGU и дай им вторую жизнь.",
 };
 
