@@ -22,6 +22,7 @@ import {
   PackageOpen,
   Pencil,
   Search,
+  Send,
   Shirt,
   SlidersHorizontal,
   Sparkles,
@@ -55,6 +56,8 @@ type Reservation = {
 };
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const telegramBotUrl = "https://t.me/Eco_Box1ogu_bot";
+const telegramBotQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(telegramBotUrl)}`;
 
 const university = {
   name: "Атырауский университет нефти и газа имени Сафи Утебаева",
@@ -454,6 +457,7 @@ export default function Home() {
         </nav>
         <div className="topbar-actions">
           <LanguageSwitcher />
+          <a className="telegram-pill" href={telegramBotUrl} target="_blank" rel="noreferrer" aria-label={t("telegramBotOpen")}><Send size={14} />Telegram</a>
           <button className="points-pill" onClick={() => setActiveTab("karma")}><Sparkles size={15} />86 <span>{t("pointsShort")}</span></button>
           <Link className="avatar-button" href="/signup" aria-label={t("createAccount")} title={t("createAccount")}><UserRound size={18} /></Link>
         </div>
@@ -489,6 +493,13 @@ export default function Home() {
                 <h1>{t("heroTitleA")}<br /><em>{t("heroTitleB")}</em></h1>
                 <p>{t("heroBody")}</p>
                 <a className="hero-cta" href="#market" onClick={() => setActiveTab("market")}>{t("openShowcase")} <ArrowRight size={17} /></a>
+                <div className="telegram-cta">
+                  <a className="telegram-link" href={telegramBotUrl} target="_blank" rel="noreferrer" aria-label={t("telegramBotOpen")}>
+                    <span className="telegram-link-icon"><Send size={16} /></span>
+                    <span className="telegram-link-copy"><strong>{t("telegramBotTitle")}</strong><small>{t("telegramBotSubtitle")}</small></span>
+                  </a>
+                  <div className="telegram-qr"><img src={telegramBotQrUrl} alt={t("telegramQrAlt")} /></div>
+                </div>
                 <div className="hero-proof"><span className="proof-avatars"><i><Leaf size={12} /></i><i>A</i><i>G</i></span><span>{t("demoShowcase")} <strong>{t("communityAogu")}</strong></span></div>
               </div>
               <aside className={`locker-feature ${university.color}`}>
